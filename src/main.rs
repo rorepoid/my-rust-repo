@@ -1,5 +1,7 @@
 use std::io;
 
+const MESSAGE: &str = "El Psy Kongroo";
+
 fn main() {
     println!("Enter your username:");
     let  mut username = String::new();
@@ -12,6 +14,6 @@ fn main() {
     println!("variable content: {}", variable);
     let name = name.trim();
 
-    println!("{} says El Psy Kongroo", username);
+    println!("{} says {}", username, MESSAGE);
     println!("But the real name of {} is: {}", username, name);
 }
