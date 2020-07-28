@@ -10,8 +10,7 @@ fn main() {
 
     println!("Enter your name:");
     let mut name = String::new();
-    let variable: String = io::stdin().read_line(&mut name).expect("Couldn't read name").to_string();
-    println!("variable content: {}", variable);
+    io::stdin().read_line(&mut name).expect("Couldn't read name").to_string();
     let name = name.trim();
 
     println!("{} says {}", username, MESSAGE);
