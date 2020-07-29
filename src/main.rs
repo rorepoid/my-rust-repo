@@ -5,10 +5,7 @@ const NAME_REQUEST: &str = "Enter your name";
 const USERNAME_REQUEST: &str = "Enter your username";
 
 fn main() {
-    // ask for username
     let username = ask(USERNAME_REQUEST);
-
-    // ask for name
     let name = ask(NAME_REQUEST);
 
     println!("{} says {}", username, MESSAGE);
