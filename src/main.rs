@@ -22,3 +22,12 @@ fn main() {
     println!("{} says {}", username, MESSAGE);
     println!("But the real name of {} is: {}", username, name);
 }
+
+#[warn(dead_code)]
+fn ask(request: &str) -> String {
+    println!("{}", request);
+    let mut response = String::new();
+    io::stdin().read_line(&mut response).expect("Couldn't read input");
+    let response = response.trim().to_string();
+    return response;
+}
