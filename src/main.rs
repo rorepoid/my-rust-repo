@@ -17,5 +17,6 @@ fn ask(request: &str) -> String {
     let mut response = String::new();
     io::stdin().read_line(&mut response).expect("Couldn't read input");
     let response = response.trim().to_string();
+
     return response;
 }
