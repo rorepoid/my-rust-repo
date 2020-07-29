@@ -9,11 +9,7 @@ fn main() {
     let username = ask(USERNAME_REQUEST);
 
     // ask for name
-    println!("{}", NAME_REQUEST);
-    let mut name = String::new();
-
-    io::stdin().read_line(&mut name).expect("Couldn't read name").to_string();
-    let name = name.trim();
+    let name = ask(NAME_REQUEST);
 
     println!("{} says {}", username, MESSAGE);
     println!("But the real name of {} is: {}", username, name);
