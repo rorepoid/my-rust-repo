@@ -2,6 +2,7 @@ use std::io;
 
 const MESSAGE: &str = "El Psy Kongroo";
 const USERNAME_REQUEST: &str = "Enter your username";
+const NAME_REQUEST: &str = "Enter your name";
 
 fn main() {
     println!("{}", USERNAME_REQUEST);
@@ -9,7 +10,7 @@ fn main() {
     io::stdin().read_line(&mut username).expect("Couldn't read username");
     let username = username.trim();
 
-    println!("Enter your name:");
+    println!("{}", NAME_REQUEST);
     let mut name = String::new();
     io::stdin().read_line(&mut name).expect("Couldn't read name").to_string();
     let name = name.trim();
