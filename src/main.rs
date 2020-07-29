@@ -6,11 +6,7 @@ const USERNAME_REQUEST: &str = "Enter your username";
 
 fn main() {
     // ask for username
-    println!("{}", USERNAME_REQUEST);
-    let mut username = String::new();
-
-    io::stdin().read_line(&mut username).expect("Couldn't read username");
-    let username = username.trim();
+    let username = ask(USERNAME_REQUEST);
 
     // ask for name
     println!("{}", NAME_REQUEST);
@@ -23,7 +19,6 @@ fn main() {
     println!("But the real name of {} is: {}", username, name);
 }
 
-#[warn(dead_code)]
 fn ask(request: &str) -> String {
     println!("{}", request);
     let mut response = String::new();
