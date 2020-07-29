@@ -1,9 +1,10 @@
 use std::io;
 
 const MESSAGE: &str = "El Psy Kongroo";
+const USERNAME_REQUEST: &str = "Enter your username";
 
 fn main() {
-    println!("Enter your username:");
+    println!("{}", USERNAME_REQUEST);
     let  mut username = String::new();
     io::stdin().read_line(&mut username).expect("Couldn't read username");
     let username = username.trim();
