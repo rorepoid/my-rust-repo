@@ -1,4 +1,4 @@
-pub fn english() -> String {
-    let message = String::from("Hello, world");
+pub const fn english() -> &'static str {
+    let message: &str = "hello world";
     message
 }

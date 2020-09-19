@@ -1,6 +1,7 @@
 use std::io;
+mod greetings;
 
-const MESSAGE: &str = "El Psy Kongroo";
+const MESSAGE: &str = greetings::english();
 const NAME_REQUEST: &str = "Enter your name";
 const USERNAME_REQUEST: &str = "Enter your username";
 
