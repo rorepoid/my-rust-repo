@@ -9,8 +9,7 @@ fn main() {
     let username: String = ask(USERNAME_REQUEST);
     let name: String = ask(NAME_REQUEST);
 
-    println!("{} says {}", username, MESSAGE);
-    println!("But the real name of {} is: {}", username, name);
+    answer(&username, &name)
 }
 
 fn ask(request: &str) -> String {
@@ -19,5 +18,10 @@ fn ask(request: &str) -> String {
     io::stdin().read_line(&mut response).expect("Couldn't read input");
     let response: String = response.trim().to_string();
 
-    return response;
+    response
+}
+
+fn answer(username: &str, name: &str) {
+    println!("{} says {}", username, MESSAGE);
+    println!("But the real name of {} is: {}", username, name);
 }
