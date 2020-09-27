@@ -1,27 +1,13 @@
-use std::io;
 mod greetings;
-
-const MESSAGE: &str = greetings::english();
-const NAME_REQUEST: &str = "Enter your name";
-const USERNAME_REQUEST: &str = "Enter your username";
+mod user;
 
 fn main() {
-    let username: String = ask(USERNAME_REQUEST);
-    let name: String = ask(NAME_REQUEST);
+    let username = "".to_string();
+    let name = "".to_string();
 
-    answer(&username, &name)
-}
-
-fn ask(request: &str) -> String {
-    println!("{}", request);
-    let mut response: String = String::new();
-    io::stdin().read_line(&mut response).expect("Couldn't read input");
-    let response: String = response.trim().to_string();
-
-    response
-}
-
-fn answer(username: &str, name: &str) {
-    println!("{} says {}", username, MESSAGE);
-    println!("But the real name of {} is: {}", username, name);
+    let mut user: user::User = user::User::new(username, name);
+    user.ask_username();
+    user.ask_name();
+    user.say_username();
+    user.say_name();
 }
