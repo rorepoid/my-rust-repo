@@ -2,8 +2,8 @@ mod greetings;
 mod user;
 
 fn main() {
-    let username = "".to_string();
-    let name = "".to_string();
+    let username: String = "".to_string();
+    let name: String = "".to_string();
 
     let mut user: user::User = user::User::new(username, name);
     user.ask_username();
