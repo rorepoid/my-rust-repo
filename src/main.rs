@@ -1,4 +1,3 @@
-mod greetings;
 mod user;
 
 fn main() {
