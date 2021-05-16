@@ -1,9 +1,13 @@
 use std::env;
 use std::fs;
+use std::process;
 
 pub fn start() {
     let args: Vec<String> = env::args().collect();
-    let config: Config = Config::new(&args);
+    let config: Config = Config::new(&args).unwrap_or_else(|err: &str| {
+        println!("Problem passing arguments, {}", err);
+        process::exit(1);
+    });
 
     println!("Searching for {}", config.query);
     println!("In file {}", config.filename);
@@ -20,13 +24,13 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn new(args: &[String]) -> Config {
+    pub fn new(args: &[String]) -> Result<Config, &str> {
         if args.len() < 3 {
-            panic!("Not enought arguments");
+            return Err("Not enought arguments");
         }
         let query: String = args[1].clone();
         let filename: String = args[2].clone();
 
-        Config { query, filename }
+        Ok(Config { query, filename })
     }
 }
