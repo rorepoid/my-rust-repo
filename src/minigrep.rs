@@ -12,8 +12,12 @@ pub fn start() {
     println!("Searching for {}", config.query);
     println!("In file {}", config.filename);
 
+    run(config);
+}
+
+pub fn run(config: Config) {
     let contents: String = fs::read_to_string(config.filename)
-        .expect("Could't find file");
+    .expect("Could't find file");
 
     println!("With text: \n{}", contents);
 }
