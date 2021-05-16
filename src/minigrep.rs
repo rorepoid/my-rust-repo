@@ -21,6 +21,9 @@ pub struct Config {
 
 impl Config {
     pub fn new(args: &[String]) -> Config {
+        if args.len() < 3 {
+            panic!("Not enought arguments");
+        }
         let query: String = args[1].clone();
         let filename: String = args[2].clone();
 
