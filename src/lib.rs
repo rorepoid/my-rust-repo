@@ -1,5 +1,4 @@
-use std::fs;
-use std::{env, error::Error};
+use std::{env, error::Error, fs};
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents: String = fs::read_to_string(config.filename)?;
