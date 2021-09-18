@@ -10,16 +10,6 @@ impl User {
         return User {username, name}
     }
 
-    pub fn ask_username(&mut self) {
-        println!("Enter your username");
-        io::stdin().read_line(&mut self.username).expect("Couldn't read input");
-    }
-
-    pub fn ask_name(&mut self) {
-        println!("Enter your name");
-        io::stdin().read_line(&mut self.name).expect("Couldn't read input");
-    }
-
     pub fn say_name(&self) {
         print!("Your name is {}", self.name);
     }
@@ -27,4 +17,19 @@ impl User {
     pub fn say_username(&self) {
         print!("Your username is {}", self.username);
     }
+}
+
+pub fn ask_username() -> String {
+    let mut username: String;
+    println!("Enter your username");
+    io::stdin().read_line(&mut username).expect("Couldn't read input");
+
+    username
+}
+
+pub fn ask_name() -> String {
+    let mut name: String;
+    println!("Enter your name");
+    io::stdin().read_line(&mut name).expect("Couldn't read input");
+    name
 }
