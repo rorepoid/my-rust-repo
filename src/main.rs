@@ -1,20 +1,6 @@
-use std::env;
-use std::process;
-
-use my_rust_repo::Config;
+mod grepper;
+use crate::grepper::infrastructure::console::grepper_command_handler::handle;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    let config: Config = Config::new(&args).unwrap_or_else(|err: &str| {
-        eprintln!("Problem passing arguments, {}", err);
-        process::exit(1);
-    });
-
-    println!("Searching for {}", config.query);
-    println!("In file {}", config.filename);
-
-    if let Err(e) = my_rust_repo::run(config) {
-        eprintln!("Application Error: {}", e);
-        process::exit(1);
-    }
+    handle();
 }
