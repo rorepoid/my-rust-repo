@@ -1,8 +1,9 @@
-use crate::grepper::infrastructure::shared::grepper_request::Request;
-use crate::grepper::infrastructure::shared::grepper_requester::{Requester, GrepperRequester};
-use crate::grepper::infrastructure::shared::grepper_response::Response;
 use std::env;
 use std::process;
+
+use crate::grepper::infrastructure::shared::grepper_request::Request;
+use crate::grepper::infrastructure::shared::grepper_requester::{GrepperRequester, Requester};
+use crate::grepper::infrastructure::shared::grepper_response::Response;
 
 pub fn handle() {
     let args: Vec<String> = env::args().collect();

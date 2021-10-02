@@ -2,12 +2,12 @@ use std::io;
 
 pub struct User {
     username: String,
-    name: String
+    name: String,
 }
 
 impl User {
     pub fn new(username: String, name: String) -> User {
-        return User {username, name}
+        return User { username, name };
     }
 
     pub fn say_name(&self) {
