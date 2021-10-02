@@ -15,10 +15,10 @@ impl<'a> Request<'a> {
         }
     }
     pub fn needle(&self) -> &'a str {
-        &self.needle
+        self.needle
     }
     pub fn haystack(&self) -> &'a str {
-        &self.haystack
+        self.haystack
     }
     pub fn searcher_type(&self) -> &'a str {
         self.searcher_type

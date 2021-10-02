@@ -5,7 +5,7 @@ pub struct StringContent;
 
 impl ReadContent for StringContent {
     fn read(&self, haystack: &str) -> String {
-        haystack.to_string()
+        haystack.to_owned()
     }
 }
 
@@ -15,7 +15,7 @@ impl SearchContent for StringContent {
             .read(haystack)
             .lines()
             .filter(|line: &&str| line.contains(needle))
-            .map(|matches: &str| matches.to_string())
+            .map(|matches: &str| matches.to_owned())
             .collect()
     }
 }

@@ -6,7 +6,7 @@ pub struct FileContent;
 
 impl ReadContent for FileContent {
     fn read(&self, haystack: &str) -> String {
-        match fs::read_to_string(haystack.clone()) {
+        match fs::read_to_string(haystack.to_owned()) {
             Ok(content) => content,
             Err(error) => panic!("{}", error)
         }
@@ -19,7 +19,7 @@ impl SearchContent for FileContent {
             .read(haystack)
             .lines()
             .filter(|line: &&str| line.contains(needle))
-            .map(|matches: &str| matches.to_string())
+            .map(|matches: &str| matches.to_owned())
             .collect()
     }
 }
